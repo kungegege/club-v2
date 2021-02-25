@@ -2,7 +2,6 @@ package com.srb.club.controller.page;
 
 import com.srb.club.pojo.entity.viewEntity.UserViewEntity;
 import com.srb.club.pojo.vo.request.LoginVo;
-import com.srb.club.service.UserService;
 import com.srb.club.utils.CodeMsg;
 import com.srb.club.utils.JWTUtil;
 import lombok.extern.slf4j.Slf4j;
@@ -18,8 +17,7 @@ import java.util.HashMap;
 @Controller
 @Slf4j
 public class IndexController {
-    @Autowired
-    private UserService userService;
+
 
     @GetMapping("")
     public String index(){
