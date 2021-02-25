@@ -1,0 +1,91 @@
+.header {
+    height: 80px;
+    /*background-image: url("/images/head_bg.png");*/
+}
+.cd-main-content{
+    padding: 0;
+}
+.flexslider .flex-control-nav{
+    text-align: right;
+    padding:0 30px;
+}
+.flex-direction-nav{
+    display: none;
+}
+.flex-prev,
+.flex-next{
+    opacity: .6;
+}
+.flexslider:hover .flex-direction-nav{
+    display: block;
+}
+
+.selection-title{
+    height: 50px;
+    line-height: 50px;
+    background-color: transparent;
+}
+
+.selection-title > .right-box{
+    float: right;
+    width: 300px;
+    background-color: #1b6d85;
+    height: 100%;
+    font-size: 20px;
+    color: white;
+    padding-right: 15px;
+    text-align: center;
+}
+.selection-title > .right-box:before{
+    content: '';
+    display: inline-block;
+    height: 100%;
+    /*width: 50px;*/
+    background-color: #1b6d85;
+    float: left;
+    border-bottom: 50px solid transparent;
+    border-left: 50px solid ;
+}
+
+.selection-title > .left-box{
+    width: 300px;
+    background-color: #1b6d85;
+    height: 100%;
+    font-size: 20px;
+    color: white;
+    text-align: center;
+    float: left;
+}
+
+.selection-title > .left-box:after{
+    content: '';
+    display: inline-block;
+    height: 100%;
+    /*width: 50px;*/
+    background-color: #1b6d85;
+    float: right;
+    border-left: 50px solid #1b6d85;
+    border-bottom: 50px solid ;
+}
+.activity-section {
+    display: flex;
+    justify-content: flex-end;
+    background-color: #5bc0de;
+    align-items: center;
+    padding: 0 50px;
+}
+.thumbnail-box{
+    display: flex;
+    padding: 5px 50px;
+}
+
+.thumbnail-box > li{
+    width:307px;
+    margin-right: 20px;
+}
+
+.glyphicon-chevron-left,
+.glyphicon-chevron-right{
+    font-size: 40px;
+    cursor: pointer;
+}

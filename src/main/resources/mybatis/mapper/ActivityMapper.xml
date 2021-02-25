@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+<mapper namespace="com.srb.club.pojo.mapper.ActivityMapper">
+    <resultMap id="activity" type="ActivityEntity">
+        <result property="authorId" column="author_id"></result>
+        <result property="isActive" column="is_active"></result>
+        <result property="isDeleted" column="is_deleted"></result>
+        <result property="updateTime" column="update_time"></result>
+        <result property="createTime" column="create_time"></result>
+    </resultMap>
+
+    <insert id="insertActivity" >
+    INSERT INTO activity ( aid, title,cid ,author_id, content, is_active, is_deleted )
+    VALUES(#{aid},#{title},#{cid},#{authorId},#{content},#{isActive},#{isDeleted})
+    </insert>
+
+    <select id="selectActivityByAid" parameterType="long" resultMap="activity">
+        select aid,cid, title, author_id, content, is_active, is_deleted, create_time, update_time from activity where aid=#{aid}
+    </select>
+
+    <select id="selectActivityByCid" parameterType="long" resultMap="activity">
+        select aid,cid, title, author_id, content, is_active, is_deleted, create_time, update_time from activity where cid=#{cid}
+    </select>
+
+
+    <select id="selectActivitiesByKeywords" resultMap="activity">
+         SELECT
+            aid,
+            cid,
+            title,
+            author_id,
+            content,
+            is_active,
+            is_deleted,
+            create_time,
+            update_time
+        FROM
+            activity
+        WHERE
+            title LIKE  concat('%', #{keywords}, '%') and is_deleted=0 and is_active=1
+	</select>
+
+    <select id="selectActivitiesByClubId" resultMap="activity">
+         SELECT
+            aid,
+            cid,
+            title,
+            author_id,
+            content,
+            is_active,
+            is_deleted,
+            create_time,
+            update_time
+        FROM
+            activity
+        WHERE
+           author_id=#{cid} and is_deleted=0 and is_active=1
+	</select>
+
+
+
+
+</mapper>
+

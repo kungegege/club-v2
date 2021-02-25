@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <link  th:replace="~{layout/resource::club-head}"/>
+    <link rel="stylesheet" href="/css/index.css"/>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css"/>
+</head>
+<body>
+    <div class="header">
+        <div th:replace="~{layout/header::club-header}"></div>
+    </div>
+
+    <main class="cd-main-content">
+        <div th:replace="module/carousel.html::carousel"></div>
+
+        <div class="selection-title">
+            <div class="right-box">最新活动</div>
+        </div>
+
+        <div class="activity-section">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <ul class="thumbnail-box">
+                <li ><div th:replace="module/thumbnail.html::thumbnail" ></div></li>
+                <li ><div th:replace="module/thumbnail.html::thumbnail" ></div></li>
+                <li><div th:replace="module/thumbnail.html::thumbnail" ></div></li>
+            </ul>
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </div>
+
+        <div class="selection-title">
+            <div class="left-box">活跃社团</div>
+        </div>
+
+        <div class="selection-title">
+            <div class="right-box">资讯</div>
+        </div>
+
+    </main>
+    <footer th:replace="layout/footer::club-footer"></footer>
+    <div th:replace="layout/resource.html::club-foot"></div>
+    <script src="js/index.js"></script>
+</body>
+</html>

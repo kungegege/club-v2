@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class='post-module' th:fragment="thumbnail" >
+        <link rel="stylesheet" href="/css/thumbnail.css">
+        <div class='thumbnail'>
+            <img src='/images/demo.jpg'>
+        </div>
+        <div class='post-content'>
+            <div class='category'>图管会</div>
+            <h1 class='title'>图书漂流活动开始了</h1>
+            <h2 class='sub_title'>让书香布满校园，让书籍走进人间</h2>
+            <p class='description'>书山之高、学海之深，到图书馆一看就知道了，人类文明就这样耸立在你的面前，线下报名地点：图书馆值班室，线上报名：将附件1填好发到298237723@qq.com</p>
+            <div class='post-meta'>
+                <span class='timestamp'><i class='fa fa-clock-o'></i>6 分钟前</span>
+                <span class='comments'>
+                 <i class='fa fa-comments'></i>
+                 <a href='#'>截至时间：2020-1-23</a>
+                 </span>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(window).load(function () {
+                $('.post-module').hover(function () {
+                    $(this).find('.description').stop().animate({
+                        height: 'toggle',
+                        opacity: 'toggle'
+                    }, 300);
+                });
+            });
+        </script>
+    </div>
+</body>
+</html>

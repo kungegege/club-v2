@@ -1,0 +1,46 @@
+
+spring:
+  profiles:
+    active: dev
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: zk123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://120.78.210.110:3306/vast-club?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+  # 静态资源访问
+  mvc:
+    static-path-pattern: /**
+  redis:
+    host: 120.78.210.110
+    port: 6379
+    timeout: PT10S
+    lettuce:
+      pool:
+        max-active: 100
+        max-idle: 30
+        min-idle: 1
+
+#  mybatis
+mybatis:
+#  type-aliases-package: com.srb.club.dao
+  config-location: classpath:mybatis/mybatis-config.xml
+  mapper-locations: classpath:mybatis/mapper/**/*.xml
+
+aliyun:
+  oss:
+    # oss对外服务的访问域名
+    endpoint: oss-cn-beijing.aliyuncs.com
+    # 访问身份验证中用到用户标识
+    accessKeyId: LTAI4GJ1mXzosfKkY6ttWiQD
+    # 用户用于加密签名字符串和oss用来验证签名字符串的密钥
+    accessKeySecret: mFVBAsTN35u5i6rDRefDAj6yY0o4No
+    bucketName: toanswer
+server:
+  port: 8888

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+    <header class="cd-auto-hide-header" th:fragment="club-header">
+        <div class="logo"><a href="/"><img src="/images/cd-logo.svg" alt="Logo"></a></div>
+        <nav class="cd-primary-nav">
+            <a href="#cd-navigation" class="nav-trigger">
+                <span>
+                    <em aria-hidden="true"></em>
+                </span>
+            </a> <!-- .nav-trigger -->
+            <ul id="cd-navigation">
+                <li><a href="/activity">活动</a></li>
+                <li><a href="/clubs">社团</a></li>
+                <li><a href="/beside">周边</a></li>
+                <li><a href="/about">联系我们</a></li>
+                <li><a href="/login" id="login">登录</a></li>
+<!--                <li th:if="${session.uname == null}" ><a href="/login">登录</a></li>-->
+<!--                <li th:if="${session.uname != null}" ><a href="/" th:text="${session.uname}">登录</a></li>-->
+                <li><a href="/user/profile" id="mine">我的</a></li>
+            </ul>
+        </nav> <!-- .cd-primary-nav -->
+    </header> <!-- .cd-auto-hide-header -->
+
+</html>
